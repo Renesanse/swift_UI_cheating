@@ -7,11 +7,13 @@
 
 import SwiftUI
 
+let model = NewsListViewModel(api: NewsApiImpl())
+
 @main
 struct ONGNavigationApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(listVM: model).environmentObject(model)
         }
     }
 }
